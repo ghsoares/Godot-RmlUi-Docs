@@ -1,8 +1,7 @@
 #!/bin/sh
 
-cd gdex-doc-gen
 python3 -m venv .env
 . .env/bin/activate
 pip install --upgrade pip
-./generator.py -project_name "Godot RmlUi" -src_folder ../../doc_classes -dst_folder ../
+$PWD/gdex-doc-gen/generator.py -project_name "Godot RmlUi" -src_folder ./doc_classes -dst_folder ./
 deactivate
