@@ -1,0 +1,48 @@
+[section=building]
+[section_title1]Building[/section_title1]
+
+See [url=https://docs.godotengine.org/en/4.4/contributing/development/compiling/introduction_to_the_buildsystem.html]Introduction to the buildsystem[/url] for the required tools to building this GDExtension in your machine.
+
+You can also build using the Dockerfile in the repository.
+
+After getting the required tools, you can build the GDExtension with:
+
+[codeblocks]
+[bash]
+scons platform=<platform>
+[/bash]
+[/codeblocks]
+
+Replace [code]<platform>[/code] with the target platform:
+[ul]
+[code]linux[/code] for Linux systems;
+[code]windows[/code] for Windows systems;
+[code]android[/code] for Android systems.
+[/ul]
+
+After finishing the build, you will be able to find the binaries in [code]bin/[/code] folder, copy then to the [code]addons/rmlui/bin/[/code] folder in your project, overwritting existing binaries if already exists.
+
+[/section]
+[section=build-options]
+[section_title2]Build Options[/section_title1]
+
+With the SCons build system, you can pass additional flags when building the extension:
+
+[h3][code]svg_plugin=<yes|no>[/code][/h3]
+
+Defaults to [code]yes[/code]
+
+By default, the extension builds with SVG support, using [url=https://github.com/sammycage/lunasvg]lunasvg[/url], but you can pass [code]svg_plugin=no[/code] to disable SVG support.
+
+[h3][code]element_reference_strict=<yes|no>[/code][/h3]
+
+Defaults to [code]no[/code]
+
+[class RMLElement] is a reference to a element inside the RmlUi document's tree, all the API always returns a non-null instance of it, but in case of querying elements which doesn't exist in the tree, for example, RMLElement references a null element.
+
+By default, when trying to handle RMLElement instances with null reference, it does nothing and/or returns default values.
+But you can enable strict element referencing by passing [code]element_reference_strict=yes[/code] flag to the scons, meaning that any atempt of handling RMLElement instances with null reference, will print an error and pause the execution on debug builds.
+
+In both cases, you can check if the instance is valid with [method RMLElement.is_valid].
+
+[/section]
