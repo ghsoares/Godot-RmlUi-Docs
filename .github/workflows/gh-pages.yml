@@ -20,17 +20,9 @@ jobs:
         with:
           python-version: '3.13' 
       
-      - name: Get GitHub Pages URL
-        id: get_pages_url
-        run: |
-          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          echo "PAGES_URL=$url" >> $GITHUB_ENV
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
       - name: Generate Docs
         env:
-          PROJECT_BASE_URL: ${{ env.PAGES_URL }}
+          PROJECT_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: ./generate-docs
         shell: bash
       
