@@ -1,11 +1,9 @@
-[section=getting-started]
-[section_title1]Getting Started[/section_title1]
+[section=getting-started][section_title1]Getting Started[/section_title1]
+Head over to [url=https://github.com/ghsoares/Godot-RmlUi/releases]GitHub releases[/url] to download the latest version, extract and add [code]addons/[/code] folder to your project's main folder.
 
-Head over to [url=https://github.com/ghsoares/Godot-RmlUi/releases]GitHub releases[/url] to download the latest version, extract and add [code]addons/[/code] folder to your project's main folder. 
 Enable it on project's Plugins settings and RmlUi is installed!
 
 To start using it, add a [class RMLDocument] to your scene, it's a Control-based node, so feel free to adjust it's dimensions.
-
 To make it show something, you need a [code].rml[/code] file and attach a script to load the file. 
 
 Here's a sample document file:
@@ -33,7 +31,6 @@ Here's a sample document file:
 </rml>
 [/html]
 [/codeblocks]
-
 And a script of courtesy:
 
 [codeblocks]
@@ -44,22 +41,17 @@ func _ready() -> void:
 	load_from_path("res://test.rml")
 [/gdscript]
 [/codeblocks]
-
 Attaching [code]res://test.gd[/code] to the [class RMLDocument] node and running the scene should show something like this:
 
 [img=100%]$BASE_URL/resources/images/getting_started1.png[/img]
-
 [/section]
-[section=rmlui-api]
-[section_title2]RmlUi API[/section_title2]
+[section=rmlui-api][section_title2]RmlUi API[/section_title2]
 This GDExtension was created with [url=https://github.com/mikke89/RmlUi]RmlUi[/url], some of it's API is translated to GDExtension, like querying elements, setting attributes, properties, classes, etc.
 
 Some of it's features are incompatible with this GDExtension, like for example:
 [ul]
-[url=https://mikke89.github.io/RmlUiDoc/pages/data_bindings.html]Data binding (model-view-controller)[/url], as it doesn't have support of adding data binding on runtime (RmlUi expects data bindings before even loading an document);
-[url=https://mikke89.github.io/RmlUiDoc/pages/lua_manual.html]Lua[/url], as for scripting is recommended to use GDScript instead.
+[*][url=https://mikke89.github.io/RmlUiDoc/pages/data_bindings.html]Data binding (model-view-controller)[/url], as it doesn't have support of adding data binding on runtime (RmlUi expects data bindings before even loading an document);
+[*][url=https://mikke89.github.io/RmlUiDoc/pages/lua_manual.html]Lua[/url], as for scripting is recommended to use GDScript instead.
 [/ul]
-
 More features could be found incompatible with this GDExtension, if you find any issue, please report it to [url=https://github.com/ghsoares/Godot-RmlUi/issues]github issues[/url].
-
 [/section]

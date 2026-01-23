@@ -15,7 +15,7 @@ def configure_pages(gen):
 	gen.add_documentation_page({
 		"name": "Getting Started",
 		"href": "$BASE_URL/tutorial/getting_started.html",
-		"location": "/",
+		"location": "/getting_started",
 		"filename": gen.dist_path("tutorial/getting_started.html"),
 		"content": gen.markup_bbcode(gen.get_file_str(gen.dst_path('pages/getting_started.bbcode')))
 	})
@@ -23,7 +23,7 @@ def configure_pages(gen):
 	gen.add_documentation_page({
 		"name": "Building",
 		"href": "$BASE_URL/tutorial/building.html",
-		"location": "/",
+		"location": "/building",
 		"filename": gen.dist_path("tutorial/building.html"),
 		"content": gen.markup_bbcode(gen.get_file_str(gen.dst_path('pages/building.bbcode')))
 	})
