@@ -57,7 +57,7 @@
 			</description>
 		</method>
 		<method name="get_children" qualifiers="const">
-			<return type="Array[RMLElement]" />
+			<return type="RMLElement[]" />
 			<description>
 				Returns the list of children of this element.
 			</description>
@@ -136,7 +136,7 @@
 			</description>
 		</method>
 		<method name="query_selector_all" qualifiers="const">
-			<return type="Array[RMLElement]" />
+			<return type="RMLElement[]" />
 			<param index="0" name="selector" type="String" />
 			<description>
 				Selects all direct and indirect childs of this element which matches [param selector].

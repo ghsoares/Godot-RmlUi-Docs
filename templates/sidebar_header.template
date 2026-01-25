@@ -1,0 +1,3 @@
+<a href="$BASE_URL/" id="sidebar-header">
+	<img src="$BASE_URL/logo.svg" width="100%"/>
+</a>
