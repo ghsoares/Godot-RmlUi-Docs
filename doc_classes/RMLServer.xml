@@ -102,7 +102,6 @@
 			<param index="1" name="fallback_face" type="bool" default="false" />
 			<description>
 				Loads a font face file from path.
-
 				Pass [code]true[/code] to [param fallback_face] to use this font face as fallback for unrecognized glyphs.
 				Returns [code]true[/code] when loaded successfully.
 			</description>
